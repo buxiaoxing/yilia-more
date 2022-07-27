@@ -70,12 +70,6 @@
     <% if (!index && theme.share_jia){ %>
     <%- partial('post/share') %>
     <% } %>
-    <% if (!index){ %>
-    <span id="<%- url_for(post.path) %>" class="leancloud_visitors" data-flag-title="<%- url_for(post.title) %>">
-      <em class="post-meta-item-text">阅读量 </em>
-      <i class="leancloud-visitors-count">0</i>
-    </span>
-    <% } %>
     <div class="clearfix"></div>
   </div>
   </div>
