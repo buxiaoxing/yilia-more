@@ -10,7 +10,7 @@ import {addLoadEvent} from './util'
 
 function isPathMatch(path, href) {
 	let reg = /\/|index.html/g
-	return (path.replace(reg, '')) === (href.replace(reg, ''))
+	return (path.replace(reg, '')) === encodeURI(href.replace(reg, ''))
 }
 
 function tabActive() {
