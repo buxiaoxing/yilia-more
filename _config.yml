@@ -3,9 +3,6 @@
 menu:
   主页: /
   随笔: /tags/随笔/
-  前端: /tags/前端/
-  后端: /tags/后端/
-  算法: /tags/算法/
 # SubNav
 subnav:
   github: "https://github.com/buxiaoxing"
@@ -94,16 +91,16 @@ disqus: false
 gitment:
   enable: false
   owner: ''      #你的 GitHub ID
-  repo: 'blogComments'          #存储评论的 repo
+  repo:           #存储评论的 repo
   oauth:
-    client_id: '27f3d82ff7a40a30c214'           #client ID
-    client_secret: '894452967ed1eee5721905c79e0b546e19affd24'       #client secret
+    client_id:            #client ID
+    client_secret:        #client secret
 
 #6、Valine https://valine.js.org
 valine:
   enable: false
-  appid: p4INyDk8UrxnksxAeVTejjf2-gzGzoHsz #Leancloud应用的appId
-  appkey: 1atEstntPKh7wcTfpFhvw27x #Leancloud应用的appKey
+  appid:  #Leancloud应用的appId
+  appkey: #Leancloud应用的appKey
   verify: false #验证码
   notify: false #评论回复提醒
   avatar: mm #评论列表头像样式：''/mm/identicon/monsterid/wavatar/retro/hide
@@ -111,8 +108,8 @@ valine:
 
 #7、twikoo https://twikoo.js.org/
 twikoo:
-  enable: true
-  envId: twikoo-1gbsuvyuc4fdd2b0 # 环境id
+  enable: false
+  envId:  # 环境id
 
 # 不蒜子访问量统计
 busuanzi: 

@@ -1,9 +1,7 @@
-hexo-theme-yilia-valine
+hexo-theme-yilia-more
 ================
 
-    此项目是根据hexo-theme-yilia主题做了一些优化和改动，写这个项目的初衷就是深入学习Hexo。使用yilia主题可以快速迁移到yilia-valine
-
-
+    此项目是根据hexo-theme-yilia主题做了一些优化和改动，由于yilia仓库已经没人维护了，我也多次想过换主题，但还是无法拒绝yilia的设计与审美，所以将我在使用yilia中遇到的问题，解决总结后放到该仓库中
 
 #### 项目支持
 
@@ -12,26 +10,43 @@ hexo-theme-yilia-valine
 > **同时也欢迎相同爱好者加入一起维护此项目**
 
 #### Hero-theme-yilia-valine在原基础上做了以下升级
-> 由于yilia主题强调简洁，所以这里并未做过多修改，只是增加了一个简洁的评论系统和访问统计
+> 由于yilia主题强调简洁，所以这里并未做过多修改，保留其简洁的审美，你可以点击 [我的博客](https://www.buxiaoxing.com/) 查看效果
 
 - 新增Valine评论系统及样式兼容（无需登陆即可评论）
-- 一些样式调整
+- 新增twikoo评论系统（无需登录，支持邮件提醒，微信qq提醒）
+- 新增不蒜子访问量统计
+- 修改移动端active的bug
+- 样式调整
+- rss
 
 ## 一、外观
 
 ####**常规**
 
-![image-20220111102748347](https://gitee.com/buxiaoxing/image-bed/raw/master/img/image-20220111102748347.png)
+![image-20220727165115580](http://img.buxiaoxing.com/uPic/2022/07/27165117-CdkFQI-image-20220727165115580.png)
 
 
 
 ####**valine评论系统**
 
-![image-20220111104417602](https://gitee.com/buxiaoxing/image-bed/raw/master/img/image-20220111104417602.png)
+![image-20220111104417602](http://img.buxiaoxing.com/uPic/2022/07/27165158-jc3jY8-image-20220111104417602.png)
+
+####**twikoo评论系统**
+
+![image-20220727165241819](http://img.buxiaoxing.com/uPic/2022/07/27165243-aIY0iD-image-20220727165241819.png)
+
 
 ####**手机**
 
- ![image-20220111104502570](https://gitee.com/buxiaoxing/image-bed/raw/master/img/image-20220111104502570.png)
+<div style="display: flex; justify-content: space-between;">
+  <img src="http://img.buxiaoxing.com/uPic/2022/07/27165352-Zl8rwX-IMG_0182.PNG" alt="IMG_0182" style="zoom: 25%;" />
+  <img src="http://img.buxiaoxing.com/uPic/2022/07/27165602-4rhXsq-IMG_0183.PNG" alt="IMG_0183" style="zoom:25%;" />
+</div>
+
+
+
+
+
 
 ## 二、开发者
 
@@ -44,17 +59,17 @@ hexo-theme-yilia-valine
 #### 安装
 
 ``` bash
-$ git clone https://github.com/litten/hexo-theme-yilia.git themes/yilia-valine
+$ git clone https://github.com/buxiaoxing/yilia-more.git
 ```
 
 #### 配置
 
-修改hexo根目录下的 `_config.yml` ： `theme: yilia-valine`
+修改hexo根目录下的 `_config.yml` ： `theme: yilia-more`
 
 #### 更新
 
 ``` bash
-cd themes/yilia-valine
+cd themes/yilia-more
 git pull
 ```
 
@@ -62,50 +77,49 @@ git pull
 
 [获取APP ID和APP KEY](https://valine.js.org/quickstart.html)
 
+#### twikoo
+[twikoo环境id获取](https://twikoo.js.org/quick-start.html#%E6%89%8B%E5%8A%A8%E9%83%A8%E7%BD%B2)
+
 ## 四、配置
 
 主题配置文件在主目录下的`_config.yml`，请根据自己需要修改使用。
-完整配置例子，可以参考[我的博客备份](https://github.com/buxiaoxing/hexoBlog)
+完整配置例子，可以参考[我的博客备份](https://github.com/buxiaoxing/yilia-more-demo)
 
-```
+```yml
 # Header
-
 menu:
   主页: /
   随笔: /tags/随笔/
-
 # SubNav
 subnav:
-  github: "#"
-  weibo: "#"
-  rss: "#"
-  zhihu: "#"
+  github: "https://github.com/buxiaoxing"
+  # weibo: "#"
+  # zhihu: "#"
   #qq: "#"
   #weixin: "#"
   #jianshu: "#"
   #douban: "#"
   #segmentfault: "#"
-  #bilibili: "#"
+  bilibili: "https://space.bilibili.com/504766102"
   #acfun: "#"
-  #mail: "mailto:litten225@qq.com"
+  mail: "mailto:budaxing@gmail.com"
   #facebook: "#"
   #google: "#"
-  #twitter: "#"
+  twitter: "https://twitter.com/BuDaxing"
   #linkedin: "#"
-
-rss: /atom.xml
+  rss: "atom.xml"
 
 # 是否需要修改 root 路径
 # 如果您的网站存放在子目录中，例如 http://yoursite.com/blog，
 # 请将您的 url 设为 http://yoursite.com/blog 并把 root 设为 /blog/。
-root:
+root: /
 
 # Content
 
 # 文章太长，截断按钮文字
-excerpt_link: more
+excerpt_link: false
 # 文章卡片右下角常驻链接，不需要请设置为false
-show_all_link: '展开全文'
+show_all_link: more
 # 数学公式
 mathjax: false
 # 是否在新窗口打开链接
@@ -113,7 +127,7 @@ open_in_new: false
 
 # 打赏
 # 打赏type设定：0-关闭打赏； 1-文章对应的md文件里有reward:true属性，才有打赏； 2-所有文章均有打赏
-reward_type: 2
+reward_type: 0
 # 打赏wording
 reward_wording: '谢谢你请我吃糖果'
 # 支付宝二维码图片地址，跟你设置头像的方式一样。比如：/assets/img/alipay.jpg
@@ -135,15 +149,15 @@ top: true
 # Miscellaneous
 baidu_analytics: ''
 google_analytics: ''
-favicon: /favicon.png
+favicon: /assets/img/favicon.ico
 
 #你的头像url
-avatar:
-
+avatar: /assets/img/avatar.jpg
+author: 布小星
 #是否开启分享
-share_jia: true
+share_jia: false
 
-#评论：1、多说；2、网易云跟帖；3、畅言；4、Disqus；5、Gitment；6、valine
+#评论：1、多说；2、网易云跟帖；3、畅言；4、Disqus；5、Gitment 6、valine 7、twikoo
 #不需要使用某项，直接设置值为false，或注释掉
 #具体请参考wiki：https://github.com/litten/hexo-theme-yilia/wiki/
 
@@ -161,20 +175,34 @@ changyan_conf: false
 disqus: false
 
 #5、Gitment
-gitment_owner: false      #你的 GitHub ID
-gitment_repo: ''          #存储评论的 repo
-gitment_oauth:
-  client_id: ''           #client ID
-  client_secret: ''       #client secret
+gitment:
+  enable: false
+  owner: ''      #你的 GitHub ID
+  repo:           #存储评论的 repo
+  oauth:
+    client_id:            #client ID
+    client_secret:        #client secret
 
 #6、Valine https://valine.js.org
 valine:
-  appid: #Leancloud应用的appId
+  enable: false
+  appid:  #Leancloud应用的appId
   appkey: #Leancloud应用的appKey
   verify: false #验证码
   notify: false #评论回复提醒
   avatar: mm #评论列表头像样式：''/mm/identicon/monsterid/wavatar/retro/hide
   placeholder: Just go go #评论框占位符
+
+#7、twikoo https://twikoo.js.org/
+twikoo:
+  enable: false
+  envId:  # 环境id
+
+# 不蒜子访问量统计
+busuanzi: 
+  enable: true
+  site_visit: true  # 站点访问量显示
+  article_visit: true  # 文章访问量显示
 
 # 样式定制 - 一般不需要修改，除非有很强的定制欲望…
 style:
@@ -186,7 +214,7 @@ style:
 # slider的设置
 slider:
   # 是否默认展开tags板块
-  showTags: false
+  showTags: true
 
 # 智能菜单
 # 如不需要，将该对应项置为false
@@ -199,14 +227,13 @@ smart_menu:
   aboutme: '关于我'
 
 friends:
-  友情链接1: http://localhost:4000/
-  友情链接2: http://localhost:4000/
-  友情链接3: http://localhost:4000/
-  友情链接4: http://localhost:4000/
-  友情链接5: http://localhost:4000/
-  友情链接6: http://localhost:4000/
+  gitee: https://gitee.com/buxiaoxing
+  归类笔记: https://gitee.com/buxiaoxing/note
+  个人简历: https://github.com/buxiaoxing/resume
+  博客园: https://www.cnblogs.com/angle-yan/
 
-aboutme: 很惭愧<br><br>只做了一点微小的工作<br>谢谢大家
+aboutme: 我知道我终会死去<br/><br/>正如我知道明天的太阳会从东方升起<br/><br/><br/><br/>我只是希望在我垂死之际<br/><br/>除了回忆<br/><br/>还有别的东西帮我克服恐惧<br/><br/><br/><br/>比如这些笔记
+
 ```
 
 ## 五、使用中可能会存在的问题
@@ -215,7 +242,7 @@ aboutme: 很惭愧<br><br>只做了一点微小的工作<br>谢谢大家
 
   >  这是由于hexo版本太高了，推荐使用 `3.9.0`
 
-- [`node-sass` 依赖无法安装问题](https://blog.buxiaoxing.com/2021/12/06/node-sass%E7%9A%84%E5%AE%89%E8%A3%85/)
+- [`node-sass` 依赖无法安装问题](https://www.buxiaoxing.com/post/dd1d.html)
 
 - `hexo g` 生成 `index.html` 文件为空
 
